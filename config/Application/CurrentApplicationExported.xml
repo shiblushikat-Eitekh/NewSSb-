@@ -2056,17 +2056,17 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
   </Schemas>
   <ApplicationScorecard significantModified="1783576575674"/>
 </Application>
-<Application connector="sailpoint.connector.webservices.WebServicesConnector" featuresString="PROVISIONING, ENABLE, PASSWORD, AUTHENTICATE, UNLOCK, ADDITIONAL_ACCOUNT_REQUEST" name="micro service" profileClass="" significantModified="1785993751485" type="Web Services">
+<Application connector="sailpoint.connector.webservices.WebServicesConnector" featuresString="PROVISIONING, ENABLE, PASSWORD, AUTHENTICATE, UNLOCK, ADDITIONAL_ACCOUNT_REQUEST" name="micro service" profileClass="" significantModified="1786948453181" type="Web Services">
   <Attributes>
     <Map>
       <entry key="acctAggregationEnd">
         <value>
-          <Date>1785993744425</Date>
+          <Date>1786948449832</Date>
         </value>
       </entry>
       <entry key="acctAggregationStart">
         <value>
-          <Date>1785993676864</Date>
+          <Date>1786948447479</Date>
         </value>
       </entry>
       <entry key="afterProvisioningRule"/>
@@ -2476,7 +2476,7 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
               <entry key="xpathNamespaces"/>
             </Map>
             <Map>
-              <entry key="afterRule"/>
+              <entry key="afterRule" value="Update After Rule"/>
               <entry key="beforeRule" value="Before Rule — extract username + pull updated attribute values"/>
               <entry key="body">
                 <value>
@@ -2656,8 +2656,8 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
           <Boolean>true</Boolean>
         </value>
       </entry>
-      <entry key="lastAggregationDate_account" value="2026-08-06T05:22:24Z"/>
-      <entry key="lastAggregationDate_group" value="2026-08-06T05:22:31Z"/>
+      <entry key="lastAggregationDate_account" value="2026-08-17T06:34:09Z"/>
+      <entry key="lastAggregationDate_group" value="2026-08-17T06:34:13Z"/>
       <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
       <entry key="nativeChangeDetectionAttributes"/>
       <entry key="nativeChangeDetectionEnabled">
@@ -2683,7 +2683,7 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
           </Map>
         </value>
       </entry>
-      <entry key="password" value="1:ACP:sZOiiYm3GMYnUxX1tN2psOA2ZXdLvRF9UqDrtuWZ430="/>
+      <entry key="password" value="1:ACP:ASE3YnibadmNRosa6iwM9x/xHaF0KLuRCl/617V2Fho="/>
       <entry key="private_key_to_update"/>
       <entry key="saml_assertion_url"/>
       <entry key="saml_request_body"/>
@@ -2755,15 +2755,31 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
         </Map>
       </Attributes>
       <Section name="Section 1">
-        <Field name="nativeIdentity " type="string"/>
-        <Field name="firstName " type="string"/>
-        <Field name="lastName " type="string"/>
-        <Field name="email " type="string"/>
+        <Field name="nativeIdentity " type="string">
+          <Script>
+            <Source>return identity.getAttribute("NetworkLoginID");</Source>
+          </Script>
+        </Field>
+        <Field name="firstName " type="string">
+          <Script>
+            <Source>return identity.getFirstname();</Source>
+          </Script>
+        </Field>
+        <Field name="lastName " type="string">
+          <Script>
+            <Source>return identity.getLastname();</Source>
+          </Script>
+        </Field>
+        <Field name="email " type="string">
+          <Script>
+            <Source>return identity.getEmail();</Source>
+          </Script>
+        </Field>
       </Section>
     </Form>
   </ProvisioningForms>
   <Schemas>
-    <Schema displayAttribute="samAccountName" groupAttribute="" identityAttribute="distinguishedName" instanceAttribute="" nativeObjectType="user" objectType="account" significantModified="1785993050689">
+    <Schema displayAttribute="samAccountName" groupAttribute="" identityAttribute="distinguishedName" instanceAttribute="" nativeObjectType="user" objectType="account" significantModified="1786943045362">
       <AttributeDefinition name="firstName" type="string">
         <Description/>
       </AttributeDefinition>
@@ -2795,7 +2811,7 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
         <Description/>
       </AttributeDefinition>
     </Schema>
-    <Schema descriptionAttribute="groupName" displayAttribute="groupName" identityAttribute="groupName" instanceAttribute="groupName" nativeObjectType="group" objectType="group" significantModified="1785993050689">
+    <Schema descriptionAttribute="groupName" displayAttribute="groupName" identityAttribute="groupName" instanceAttribute="groupName" nativeObjectType="group" objectType="group" significantModified="1786943045362">
       <AttributeDefinition name="groupName" type="string">
         <Description/>
       </AttributeDefinition>
@@ -2807,6 +2823,6 @@ return (first + "." + last + "@" + "mysql.com").toLowerCase();</Source>
       </AttributeDefinition>
     </Schema>
   </Schemas>
-  <ApplicationScorecard significantModified="1785993050688"/>
+  <ApplicationScorecard significantModified="1786943045362"/>
 </Application>
 </sailpoint>
