@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<Bundle name="Access_Model" significantModified="1785734355499" type="organizational">
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="false"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <RoleIndex/>
+</Bundle>
+<Bundle iiqElevatedAccess="true" name="payrollAccessIT" significantModified="1785734355393" type="it">
+  <ActivityConfig allEnabled="true"/>
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Inheritance>
+    <Reference class="sailpoint.object.Bundle" name="Access_Model"/>
+  </Inheritance>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Profiles>
+    <Profile significantModified="1780764956621">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="PayrollSystem_shiblu_1001"/>
+      </ApplicationRef>
+      <Constraints>
+        <CompositeFilter operation="OR">
+          <Filter operation="EQ" property="AccessLevel" value="Full"/>
+          <Filter ignoreCase="true" operation="EQ" property="AccessLevel" value="Limited"/>
+        </CompositeFilter>
+      </Constraints>
+    </Profile>
+  </Profiles>
+  <RoleIndex associatedToRole="true" detectedCount="4" entitlementCount="1" entitlementCountInheritance="1"/>
+</Bundle>
+<Bundle iiqElevatedAccess="true" name="projectTrackerAccessIT" significantModified="1785734355416" type="it">
+  <ActivityConfig allEnabled="true"/>
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Inheritance>
+    <Reference class="sailpoint.object.Bundle" name="Access_Model"/>
+  </Inheritance>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Profiles>
+    <Profile significantModified="1780802278089">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="ProjectTimeTrackingShiblu1001"/>
+      </ApplicationRef>
+      <Constraints>
+        <CompositeFilter operation="OR">
+          <Filter operation="EQ" property="AccountStatus" value="Active"/>
+          <Filter operation="EQ" property="AccountStatus" value="Inactive"/>
+        </CompositeFilter>
+      </Constraints>
+    </Profile>
+  </Profiles>
+  <RoleIndex associatedToRole="true" detectedCount="4" entitlementCount="1" entitlementCountInheritance="1"/>
+</Bundle>
+<Bundle iiqElevatedAccess="true" name="Employee_Role" significantModified="1785734355460" type="business">
+  <ActivityConfig allEnabled="true"/>
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Inheritance>
+    <Reference class="sailpoint.object.Bundle" name="Access_Model"/>
+  </Inheritance>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Requirements>
+    <Reference class="sailpoint.object.Bundle" name="payrollAccessIT"/>
+    <Reference class="sailpoint.object.Bundle" name="projectTrackerAccessIT"/>
+  </Requirements>
+  <Selector>
+    <IdentitySelector>
+      <PopulationRef>
+        <Reference class="sailpoint.object.GroupDefinition" name="Employee5"/>
+      </PopulationRef>
+    </IdentitySelector>
+  </Selector>
+  <RoleIndex assignedCount="4" lastAssigned="1780808788783"/>
+</Bundle>
+<Bundle iiqElevatedAccess="true" name="Contractor_Role" significantModified="1785734355499" type="business">
+  <ActivityConfig allEnabled="true"/>
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Inheritance>
+    <Reference class="sailpoint.object.Bundle" name="Access_Model"/>
+  </Inheritance>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Requirements>
+    <Reference class="sailpoint.object.Bundle" name="payrollAccessIT"/>
+    <Reference class="sailpoint.object.Bundle" name="projectTrackerAccessIT"/>
+  </Requirements>
+  <Selector>
+    <IdentitySelector>
+      <PopulationRef>
+        <Reference class="sailpoint.object.GroupDefinition" name="contractor2"/>
+      </PopulationRef>
+    </IdentitySelector>
+  </Selector>
+  <RoleIndex assignedCount="3" lastAssigned="1779772923191"/>
+</Bundle>
+<Bundle iiqElevatedAccess="true" name="Standard Employee - AD Access" significantModified="1785734355516" type="it">
+  <ActivityConfig allEnabled="true"/>
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="Create AD Account">
+      <Attributes>
+        <Map>
+          <entry key="IIQTemplateOwnerDefinition">
+            <value>
+              <DynamicValue value="IIQRequester"/>
+            </value>
+          </entry>
+          <entry key="pageTitle" value="Create AD Account"/>
+          <entry key="title" value="Create AD Account"/>
+        </Map>
+      </Attributes>
+      <Section name="Account">
+        <Field displayName="sAMAccountName" name="sAMAccountName" type="string">
+          <Script>
+            <Source>String first = identity.getAttribute("firstname");
+String last  = identity.getAttribute("lastname");
+return (first + "." + last).toLowerCase();</Source>
+          </Script>
+        </Field>
+        <Field displayName="CN" name="CN" type="string">
+          <Script>
+            <Source>String first = identity.getAttribute("firstname");
+String last  = identity.getAttribute("lastname");
+return first + " " + last;</Source>
+          </Script>
+        </Field>
+        <Field displayName="distinguishedName" name="distinguishedName" type="string">
+          <Script>
+            <Source>String cn   = identity.getAttribute("firstname") + " "
+            + identity.getAttribute("lastname");
+return "CN=" + cn + ",OU=" + ",OU=Users,DC=sailpoint,DC=local";</Source>
+          </Script>
+        </Field>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <RoleIndex/>
+</Bundle>
+</sailpoint>

@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<ObjectConfig name="Identity" significantModified="1786941288760">
+  <Attributes>
+    <Map>
+      <entry key="defaultIdentityType">
+        <value>
+          <IdentityTypeDefinition name="IIQ_default">
+            <DisallowedAttributes>
+              <String>softwareVersion</String>
+              <String>administrator</String>
+            </DisallowedAttributes>
+          </IdentityTypeDefinition>
+        </value>
+      </entry>
+      <entry key="identityTypeDefinitions">
+        <value>
+          <List>
+            <IdentityTypeDefinition displayName="identity_type_employee" name="employee">
+              <DisallowedAttributes>
+                <String>softwareVersion</String>
+                <String>administrator</String>
+              </DisallowedAttributes>
+            </IdentityTypeDefinition>
+            <IdentityTypeDefinition displayName="identity_type_contractor" name="contractor">
+              <DisallowedAttributes>
+                <String>softwareVersion</String>
+                <String>administrator</String>
+              </DisallowedAttributes>
+            </IdentityTypeDefinition>
+            <IdentityTypeDefinition displayName="identity_type_partner" name="partner">
+              <DisallowedAttributes>
+                <String>softwareVersion</String>
+                <String>administrator</String>
+              </DisallowedAttributes>
+            </IdentityTypeDefinition>
+            <IdentityTypeDefinition displayName="identity_type_rpa" name="rpa">
+              <DisallowedAttributes>
+                <String>manager</String>
+              </DisallowedAttributes>
+              <ManagerCertifierAttribute>administrator</ManagerCertifierAttribute>
+            </IdentityTypeDefinition>
+            <IdentityTypeDefinition displayName="identity_type_service" name="service">
+              <DisallowedAttributes>
+                <String>softwareVersion</String>
+              </DisallowedAttributes>
+              <ManagerCertifierAttribute>administrator</ManagerCertifierAttribute>
+            </IdentityTypeDefinition>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <ObjectAttribute displayName="att_user_name" name="name" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_detected_roles" groupFactory="true" name="bundles" system="true" type="string"/>
+  <ObjectAttribute displayName="att_detected_role_summary" name="bundleSummary" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_assigned_roles" groupFactory="true" name="assignedRoles" system="true" type="string"/>
+  <ObjectAttribute displayName="att_assigned_role_summary" name="assignedRoleSummary" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_exceptions" name="exceptions" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_last_refresh" name="lastRefresh" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_last_login" name="lastLogin" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_capabilities" name="capabilities" system="true" type="string"/>
+  <ObjectAttribute displayName="att_composite_score" name="scorecard.compositeScore" silent="true" system="true" type="string"/>
+  <ObjectAttribute displayName="att_manager_status" name="managerStatus" system="true" type="boolean"/>
+  <ObjectAttribute displayName="att_rights" name="rights" system="true" type="string"/>
+  <ObjectAttribute displayName="att_workgroups" name="workgroups" system="true" type="string"/>
+  <ObjectAttribute displayName="att_software_version" name="softwareVersion" standard="true" type="string"/>
+  <ObjectAttribute displayName="att_administrator" name="administrator" standard="true" type="sailpoint.object.Identity"/>
+  <ObjectAttribute displayName="att_display_name" editMode="ReadOnly" name="displayName" standard="true" type="string">
+    <AttributeSource name="FirstName">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="att_inactive" editMode="ReadOnly" name="inactive" standard="true" type="boolean">
+    <AttributeSource name="Status">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="Manager" editMode="ReadOnly" name="manager" standard="true" type="string">
+    <AttributeSource name="Manager">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="Type" editMode="UntilFeedValueChanges" name="type" standard="true" type="string">
+    <AttributeSource name="Role">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="Employee Type" editMode="ReadOnly" extendedNumber="2" name="employeeType" type="string">
+    <AttributeSource name="Role">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="NetworkLoginID" editMode="ReadOnly" extendedNumber="1" name="NetworkLoginID" type="string">
+    <RuleRef>
+      <Reference class="sailpoint.object.Rule" name="NetworkLoginRuleShiblu"/>
+    </RuleRef>
+    <AttributeSource name="GlobalRule:NetworkLoginRuleShiblu">
+      <RuleRef>
+        <Reference class="sailpoint.object.Rule" name="NetworkLoginRuleShiblu"/>
+      </RuleRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="att_email" editMode="Permanent" identityAttributeSyncUsingWorkflow="true" name="email" standard="true" type="sailpoint.object.Identity">
+    <ListenerWorkflow>
+      <Reference class="sailpoint.object.Workflow" name="LCM Provisioning"/>
+    </ListenerWorkflow>
+    <AttributeSource name="Email">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="First Name" editMode="Permanent" identityAttributeSyncUsingWorkflow="true" name="firstname" standard="true" type="string">
+    <ListenerWorkflow>
+      <Reference class="sailpoint.object.Workflow" name="LCM Provisioning"/>
+    </ListenerWorkflow>
+    <AttributeSource name="FirstName">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+  <ObjectAttribute displayName="att_last_name" editMode="Permanent" identityAttributeSyncUsingWorkflow="true" name="lastname" standard="true" type="string">
+    <ListenerWorkflow>
+      <Reference class="sailpoint.object.Workflow" name="LCM Provisioning"/>
+    </ListenerWorkflow>
+    <AttributeSource name="LastName">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr_Authoritative_Source_Shiblu_1001"/>
+      </ApplicationRef>
+    </AttributeSource>
+  </ObjectAttribute>
+</ObjectConfig>
+<ObjectConfig name="Link"/>
+<ObjectConfig name="Bundle" significantModified="1782905208322">
+  <Attributes>
+    <Map>
+      <entry key="approvalScheme" value="manager"/>
+      <entry key="requestable">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="roleTypeDefinitions">
+        <value>
+          <List>
+            <RoleTypeDefinition displayName="Organizational" icon="organizationalIcon" name="organizational" noAssignmentSelector="true" noAutoAssignment="true" noDetection="true" noIIQ="true" noManualAssignment="true" noPermits="true" noProfiles="true" noRequirements="true" notPermittable="true" notRequired="true">
+              <Description>
+Defines a collection of roles that typically correspond to departments or business units within an organizational hierarchy.
+                </Description>
+              <RequiredRights>
+                <Reference class="sailpoint.object.SPRight" name="ManageOrganizationalRoles"/>
+              </RequiredRights>
+            </RoleTypeDefinition>
+            <RoleTypeDefinition displayName="Business" icon="businessIcon" name="business" noDetection="true" noIIQ="true" noProfiles="true" notPermittable="true" notRequired="true">
+              <Description>
+Defines a collection of users that perform similar functions within the organization.  Business Roles are associated with IT Roles or Entitlement Roles to provide specific levels of access to enterprise IT resources.
+                </Description>
+              <RequiredRights>
+                <Reference class="sailpoint.object.SPRight" name="ManageBusinessRoles"/>
+              </RequiredRights>
+            </RoleTypeDefinition>
+            <RoleTypeDefinition displayName="IT" icon="itIcon" name="it" noAssignmentSelector="true" noAutoAssignment="true" noIIQ="true" noManualAssignment="true" noPermits="true" noRequirements="true">
+              <Description>
+Defines a collection of IT entitlements which can be associated with
+Business Roles to provide users with specific access rights.  IT Roles can be
+constrained to entitlements within a single application or expanded to include
+entitlements across applications.
+                </Description>
+              <RequiredRights>
+                <Reference class="sailpoint.object.SPRight" name="ManageITRoles"/>
+              </RequiredRights>
+            </RoleTypeDefinition>
+            <RoleTypeDefinition displayName="Entitlement" icon="entitlementIcon" name="entitlement" noAssignmentSelector="true" noAutoAssignment="true" noIIQ="true" noManualAssignment="true" noPermits="true" noRequirements="true">
+              <Description>
+Defines a single IT entitlement necessary to access data or perform
+a specific action within a target system.
+                </Description>
+              <RequiredRights>
+                <Reference class="sailpoint.object.SPRight" name="ManageEntitlementRoles"/>
+              </RequiredRights>
+            </RoleTypeDefinition>
+            <RoleTypeDefinition displayName="RapidSetup Birthright" icon="birthrightIcon" name="rapidSetupBirthright" noAutoAssignment="true" noDetectionUnlessAssigned="true" noIIQ="true" noManualAssignment="true" noPermits="true" noRequirements="true" noSubs="true" noSupers="true" notPermittable="true" notRequired="true">
+              <Description>Birthright roles</Description>
+              <RequiredRights>
+                <Reference class="sailpoint.object.SPRight" name="ManageRapidSetupBirthrightRoles"/>
+              </RequiredRights>
+            </RoleTypeDefinition>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ObjectConfig>
+<ObjectConfig name="Application"/>
+<ObjectConfig name="ManagedAttribute" significantModified="1780198125302">
+  <ObjectAttribute displayName="Access" editMode="Permanent" extendedNumber="1" name="new attribute" required="true"/>
+</ObjectConfig>
+<ObjectConfig name="Target"/>
+<ObjectConfig name="Alert"/>
+<ObjectConfig name="Server"/>
+</sailpoint>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<CorrelationConfig name="new" significantModified="1778039423048"/>
+<CorrelationConfig name="Payrool_correalation_shiblu" significantModified="1779255027413">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="name" value="EmployeeID"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+<CorrelationConfig name="ProjectTimeTrackingShiblu1001" significantModified="1779255211588">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="name" value="EmployeeID"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+<CorrelationConfig name="ADcorrelation" significantModified="1780829325755">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="name" value="displayName"/>
+    <Filter operation="EQ" property="displayName" value="sAMAccountName"/>
+    <Filter operation="EQ" property="administrator" value="cn"/>
+    <Filter operation="EQ" property="employeeType" value="employeeType"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+</sailpoint>
