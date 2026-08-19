@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<TaskSchedule lastExecution="1787111305026" name="Check expired work items daily" nextExecution="1787162400000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Check Expired Work Items"/>
+      <entry key="nextActualFireTime" value="1787162400000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0 0 * * ?</String>
+  </CronExpressions>
+  <Description>Check for expired work items every day at midnight.</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1787115600000" name="Perform maintenance" nextExecution="1787115900000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Perform Maintenance"/>
+      <entry key="nextActualFireTime" value="1787115900000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0/5 * * * ?</String>
+  </CronExpressions>
+  <Description>Perform maintenance every five minutes.</Description>
+</TaskSchedule>
+<TaskSchedule name="5a1b13c8b8c74df2ba009fcab67fe003">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="JDBC connector"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="locale" value="en_US"/>
+      <entry key="timezone" value="Asia/Dhaka"/>
+    </Map>
+  </Arguments>
+  <Description>Immediate task runner</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1787111305064" name="Perform Identity Request Maintenance" nextExecution="1787169600000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Perform Identity Request Maintenance"/>
+      <entry key="nextActualFireTime" value="1787169600000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0 2 * * ?</String>
+  </CronExpressions>
+  <Description>Perform Identity Request maintenance every day at 2 AM.</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1786859439443" name="Audit" nextExecution="1787460480000">
+  <Arguments>
+    <Map>
+      <entry key="TaskSchedule.host"/>
+      <entry key="executor" value="Audit"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="nextActualFireTime" value="1787460480000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 48 10 ? * 1 </String>
+  </CronExpressions>
+  <Description/>
+</TaskSchedule>
+<TaskSchedule lastExecution="1787111304998" name="Check expired mitigations daily" nextExecution="1787162400000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Check Expired Mitigations"/>
+      <entry key="nextActualFireTime" value="1787162400000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0 0 * * ?</String>
+  </CronExpressions>
+  <Description>Check for expired mitigations every day at midnight.</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1787111305041" name="Check sunset requests for notifications daily" nextExecution="1787162400000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Check Sunset Requests"/>
+      <entry key="nextActualFireTime" value="1787162400000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0 0 * * ?</String>
+  </CronExpressions>
+  <Description>Check for Roles and Entitlements that are about to expire and send a notification every day at midnight</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1787111305054" name="Dispatch Access History daily" nextExecution="1787162400000">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Dispatch Access History"/>
+      <entry key="nextActualFireTime" value="1787162400000"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>0 0 0 * * ?</String>
+  </CronExpressions>
+  <Description>Dispatch Access History on a defined schedule.</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1780806681000" name="identitytest [6/7/26, 10:31 AM]" nextExecution="1812342681000">
+  <Arguments>
+    <Map>
+      <entry key="certificationDefinitionId" value="Manager Certification [5/19/26, 8:54 AM] Modified 1780806681375"/>
+      <entry key="executor" value="Certification Manager"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="nextActualFireTime" value="1812342681000"/>
+      <entry key="resultName" value="identitytest [6/7/26, 10:31 AM]"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>21 31 10 7 6 ? *</String>
+  </CronExpressions>
+  <Description>Global Manager Access Review</Description>
+</TaskSchedule>
+<TaskSchedule name="c674c14ceb174774b82ee96834caf66c">
+  <Arguments>
+    <Map>
+      <entry key="executor" value="Refresh Identity Cube"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="locale" value="en_US"/>
+      <entry key="timezone" value="Asia/Dhaka"/>
+    </Map>
+  </Arguments>
+  <Description>Immediate task runner</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1780807308000" name="Manager Certification [6/7/26, 10:41 AM]" nextExecution="1812343308000">
+  <Arguments>
+    <Map>
+      <entry key="certificationDefinitionId" value="Manager Certification [6/7/26, 10:32 AM] Modified 1780807308310"/>
+      <entry key="executor" value="Certification Manager"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="nextActualFireTime" value="1812343308000"/>
+      <entry key="resultName" value="Manager Certification [6/7/26, 10:41 AM]"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>48 41 10 7 6 ? *</String>
+  </CronExpressions>
+  <Description>Global Manager Access Review</Description>
+</TaskSchedule>
+<TaskSchedule lastExecution="1782890633000" name="payrollReviwe [7/1/26, 1:23 PM]" nextExecution="1790839433000">
+  <Arguments>
+    <Map>
+      <entry key="certificationDefinitionId" value="Application Owner Certification [5/19/26, 8:50 AM] Modified 1782890631481"/>
+      <entry key="executor" value="Certification Manager"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="nextActualFireTime" value="1790839433000"/>
+      <entry key="resultName" value="payrollReviwe [7/1/26, 1:23 PM]"/>
+    </Map>
+  </Arguments>
+  <CronExpressions>
+    <String>53 23 13 1 7,10,1,4 ? </String>
+  </CronExpressions>
+  <Description>Application Owner Certification for [PayrollSystem_shiblu_1001]</Description>
+</TaskSchedule>
+</sailpoint>
