@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<GroupDefinition indexed="true" name="Access_Model" significantModified="1785734553153">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>Access_Model</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="Access_Model"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="Contractor_Role" significantModified="1785734553195">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>Contractor_Role</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="Contractor_Role"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="Employee_Role" significantModified="1785734553247">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>Employee_Role</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="Employee_Role"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="payrollAccessIT" significantModified="1785734553329">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>payrollAccessIT</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="payrollAccessIT"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="projectTrackerAccessIT" significantModified="1785734553401">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>projectTrackerAccessIT</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="projectTrackerAccessIT"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="No Payroll" nullGroup="true" significantModified="1785734553543">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="ISEMPTY" property="bundles"/>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="No Payroll"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="Standard Employee - AD Access" significantModified="1785734553589">
+  <Description>Payroll</Description>
+  <Factory>
+    <Reference class="sailpoint.object.GroupFactory" name="Payroll"/>
+  </Factory>
+  <GroupFilter>
+    <Filter operation="CONTAINS_ALL" property="bundles.name">
+      <Value>
+        <List>
+          <String>Standard Employee - AD Access</String>
+        </List>
+      </Value>
+    </Filter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="Standard Employee - AD Access"/>
+  </Index>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="Employee5" private="true" significantModified="1785734553004">
+  <Description/>
+  <GroupFilter>
+    <CompositeFilter operation="AND">
+      <Filter matchMode="START" operation="LIKE" property="employeeType" value="Employee"/>
+    </CompositeFilter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="Employee5"/>
+  </Index>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</GroupDefinition>
+<GroupDefinition indexed="true" name="contractor2" private="true" significantModified="1785734553066">
+  <Description/>
+  <GroupFilter>
+    <CompositeFilter operation="AND">
+      <Filter matchMode="START" operation="LIKE" property="employeeType" value="Contractor"/>
+    </CompositeFilter>
+  </GroupFilter>
+  <Index>
+    <Reference class="sailpoint.object.GroupIndex" name="contractor2"/>
+  </Index>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</GroupDefinition>
+</sailpoint>
